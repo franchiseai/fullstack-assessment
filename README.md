@@ -35,7 +35,7 @@ If you wish to extend your submission, you are welcome add features in place of 
 -   Store data for later retrieval as determined by frontend and backend requirements.
 - Sensible table structure.
 - Use appropriate indexing and data types.
-- Supabase is recommended, but optional
+- Supabase is recommended, but optional. Other relational DBs are acceptable, non-relational DBs are not.
 
 _**A deployed demo is optional but encouraged**_
 _**User authentication / accounts are not required**_
