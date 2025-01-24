@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/ed663dae-382b-4a85-b9b2-781c2089e993)
+
+
 ### **Introduction**
 
 NASA’s Astronomy Picture of the Day (APOD) is a popular online resource that showcases images of the universe, along with informative descriptions written by professional astronomers. The APOD images are accessible through the free [NASA  API](https://api.nasa.gov/), which provides metadata and imagery for a given date range.
