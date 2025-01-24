@@ -24,7 +24,7 @@ If you wish to extend your submission, you are welcome add features in place of 
 **Backend (Node.js/Express + TypeScript):**
 -   Create API routes to:
     -   Fetch APOD data from NASA API over a specified date range.
-    -   Save, edit, delete and retrieve user collections and notes.
+    -   Save, edit, delete and retrieve user collections and (optionally) notes.
 -   Validate incoming API requests.
 - Testing _(optional)_
 
