@@ -83,8 +83,7 @@ Asking any questions will _not_ affect our judgement of your submission.
 ## Setup Instructions
 
 ### Prerequisites
-- [Bun](https://bun.sh/) installed (for server)
-- Bun and npm/yarn (for client)
+- [Bun](https://bun.sh/) installed
 
 ### Installation
 
@@ -97,30 +96,12 @@ bun install
 **Client Setup:**
 ```bash
 cd client
-npm install  # or yarn install
+bun install
 ```
 
 ### Database Setup
 
 This project uses **Drizzle ORM** with **SQLite** (via Bun's built-in SQLite driver) for the database.
-
-**Database Schema:**
-- `collections` - Stores user-created collections
-  - id (integer, primary key)
-  - name (text)
-  - createdAt (timestamp)
-
-- `images` - Stores APOD images saved to collections
-  - id (integer, primary key)
-  - collectionId (foreign key)
-  - date, title, url, hdurl, explanation, mediaType, copyright
-  - createdAt (timestamp)
-
-- `notes` - Stores user notes for images (optional feature)
-  - id (integer, primary key)
-  - imageId (foreign key)
-  - noteText (text)
-  - createdAt, updatedAt (timestamps)
 
 **Initialize the database:**
 ```bash
