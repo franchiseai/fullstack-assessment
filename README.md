@@ -24,7 +24,7 @@ If you wish to extend your submission, you are welcome add features in place of 
 -   View lists of images in their respective collections, with their notes if applicable.
 -   Responsive design for mobile and desktop. _(optional)_
 
-**Backend (Node.js/Express + TypeScript):**
+**Backend (Bun/Express + TypeScript):**
 -   Create API routes to:
     -   Fetch APOD data from NASA API over a specified date range.
     -   Save, edit, delete and retrieve user collections and (optionally) notes.
