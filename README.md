@@ -5,7 +5,7 @@
 
 NASA’s Astronomy Picture of the Day (APOD) is a popular online resource that showcases images of the universe, along with informative descriptions written by professional astronomers. The APOD images are accessible through the free [NASA  API](https://api.nasa.gov/), which provides metadata and imagery for a given date range.
 
-In this task, you will build a full-stack web application that allows users to explore APOD images, create named collections, add personal notes, and manage their saved content using a React-based frontend and a Node.js/Express backend with a PostgreSQL database.
+In this task, you will build a full-stack web application that allows users to explore APOD images, create named collections, add personal notes, and manage their saved content using a React-based frontend and a Bun/Express backend with a PostgreSQL database.
 
 Please fork this repository to begin your submission. There is no time limit.
 
@@ -84,7 +84,7 @@ Asking any questions will _not_ affect our judgement of your submission.
 
 ### Prerequisites
 - [Bun](https://bun.sh/) installed (for server)
-- Node.js and npm/yarn (for client)
+- Bun and npm/yarn (for client)
 
 ### Installation
 
