@@ -31,11 +31,11 @@ If you wish to extend your submission, you are welcome add features in place of 
 -   Validate incoming API requests.
 - Testing _(optional)_
 
-**Database (Postgres/Supabase):**
+**Database (SQLite with Drizzle ORM):**
 -   Store data for later retrieval as determined by frontend and backend requirements.
 - Sensible table structure.
 - Use appropriate indexing and data types.
-- Supabase is recommended, but optional. Other relational DBs are acceptable, non-relational DBs are not.
+- Uses Drizzle ORM with SQLite for local development and easy setup.
 
 _**A deployed demo is optional but encouraged**_
 _**User authentication / accounts are not required**_
@@ -77,3 +77,92 @@ Your submission will be evaluated based on the following criteria, in order of i
 Thank you for taking the time to complete this task. We look forward to seeing and discussing your submission.
 Please reach out to bill@franchisesystems.ai for any questions or clarification.
 Asking any questions will _not_ affect our judgement of your submission.
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+- [Bun](https://bun.sh/) installed (for server)
+- Node.js and npm/yarn (for client)
+
+### Installation
+
+**Server Setup:**
+```bash
+cd server
+bun install
+```
+
+**Client Setup:**
+```bash
+cd client
+npm install  # or yarn install
+```
+
+### Database Setup
+
+This project uses **Drizzle ORM** with **SQLite** (via Bun's built-in SQLite driver) for the database.
+
+**Database Schema:**
+- `collections` - Stores user-created collections
+  - id (integer, primary key)
+  - name (text)
+  - createdAt (timestamp)
+
+- `images` - Stores APOD images saved to collections
+  - id (integer, primary key)
+  - collectionId (foreign key)
+  - date, title, url, hdurl, explanation, mediaType, copyright
+  - createdAt (timestamp)
+
+- `notes` - Stores user notes for images (optional feature)
+  - id (integer, primary key)
+  - imageId (foreign key)
+  - noteText (text)
+  - createdAt, updatedAt (timestamps)
+
+**Initialize the database:**
+```bash
+cd server
+
+# Generate migrations from schema
+bun run db:generate
+
+# Apply migrations (or use db:push for development)
+bun run db:push
+```
+
+**Database Commands:**
+- `bun run db:generate` - Generate migration files from schema
+- `bun run db:migrate` - Apply pending migrations
+- `bun run db:push` - Push schema changes directly (for development)
+- `bun run db:studio` - Open Drizzle Studio (visual database browser)
+
+### Environment Variables
+
+Copy `.env.example` to `.env` in the server directory:
+```bash
+cd server
+cp .env.example .env
+```
+
+Edit `.env` with your NASA API key (optional, defaults to DEMO_KEY).
+
+### Running the Application
+
+**Start the server:**
+```bash
+cd server
+bun run dev
+```
+
+**Start the client:**
+```bash
+cd client
+npm run dev  # or yarn dev
+```
+
+### Database Location
+
+The SQLite database file is stored at `server/data/apod.db` by default. You can customize this location by setting the `DB_PATH` environment variable in your `.env` file.
